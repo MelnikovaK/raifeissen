@@ -1,8 +1,6 @@
 {
 	"content": {
 
-		"save_and_multiply": {
-
 			"title": "Сохранить и преумножить",
 			"texts": [
 				"Обслуживание в московском офисе Friedrich Wilhelm Raiffeisen сочетает в себе преимущества индивидуального клиентского сервиса в Москве с инвестиционными решениями, разработанными в центральном офисе Группы Райффайзен в Вене.",
@@ -15,9 +13,9 @@
 				"url": "#",
 				"title": "Save and multiply"
 			}
-		}
+		
+		},
 
-	},
 
 	"menu": [
 		{
@@ -42,6 +40,10 @@
 			"href": "#"	
 		},
 		{
+			"title":"",
+			"href":""
+		},
+		{
 			"title": "О нас",
 			"href": "#"	
 		},
@@ -52,8 +54,14 @@
 	],
 
 	"buttons": [
-			{"text": "Raiffeisen.Online"},
-			{"text": "R.Dealer"}
+		{
+			"text": "Raiffeisen.Online",
+			"theme": "dark"
+		},
+		{
+			"text": "R.Dealer",
+			"theme": "light"
+		}
 	],
 
 	"footer": {

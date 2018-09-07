@@ -1,6 +1,3 @@
-//@prepros-append "../components/menu/menu.js"
-
-//@prepros-append "../components/main.js"
 $(function(){
 
 	var $element = $('.menu');
@@ -53,21 +50,3 @@ $(function(){
 	});
 
 });
-$(function() {
-	
-	var data;
-
-	$.get("assets/data.json", function(_data) {
-		data = _data;
-		console.log('#Main: data is loaded: ', _data );
-
-		$(window).trigger('main:ready', data );
-
-	});
-
-	console.log("#Main: main is ready!", data);
-
-});
-
-
-//# sourceMappingURL=app.min.js.map
