@@ -1,0 +1,1 @@
+//@prepros-append "../components/main.js"
