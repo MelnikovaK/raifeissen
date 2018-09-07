@@ -1,21 +1,15 @@
-%btn_sidebar {
-	height: 40px;
-}
 .btns {
-	margin: 20px;
-	text-align: center;
-	height: 40px;
 	width: 100%;
+	text-align: center;
+
 	&__btn_dark {
-		@extend %btn_sidebar;
-		background-color: #6F6F6D;
-		color: white;
+			background-color: #6F6F6D;
+			color: white;
 
-	}
+		}
 	&__btn {
-		@extend %btn_sidebar;
+		text-align: center;
+		height: 40px;
 
 	}
-
 }
-	

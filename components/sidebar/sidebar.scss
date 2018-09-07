@@ -1,13 +1,12 @@
 .sidebar {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction:row;
-	width: 25%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: $SIDEBAR-W;
 	background-color: #EAE2D1; 
 	
 	height: 100%;
 	text-align: justify;
 	padding: 0;
-
 	
 }

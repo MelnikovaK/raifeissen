@@ -1,13 +1,18 @@
 
+@import "_normalize";
 @import "_constants";
 
 
 
 @import "../components/menu/menu";
 @import "../components/header/header";
+@import "../components/header-part/header-part";
 @import "../components/sidebar/sidebar";
 @import "../components/footer/footer";
-@import "../components/btns/btns";
 @import "../components/lang/lang";
 @import "../components/content/content";
+@import "../components/info/info";
+@import "../components/img-holder/img-holder";
 @import "../components/page/page";
+@import "../components/link/link";
+@import "../components/btns/btns";

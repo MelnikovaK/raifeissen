@@ -1,0 +1,17 @@
+.link{
+	color: #6F6F6D;
+	a{
+		color: #6F6F6D;
+		text-decoration-color: grey;
+
+		&:after{
+			content: "";
+			display: inline-block;
+			background: url( $IMAGES-URL + 'link_arrow.svg');
+			width: 20px;
+			height: 7px;
+			margin-left: 2px;
+		}
+	}
+	font: $FONT-CONTENT;
+}

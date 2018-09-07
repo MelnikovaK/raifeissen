@@ -1,0 +1,27 @@
+$margin_child: 20px;
+$margin_child_top: 20px;
+
+.header-part {
+	position: absolute;
+	right: 0;
+	width: 400px;
+	height: 100%;
+
+	&__tel {
+		display: inline-block;
+		font: 25px Helvetica, sans-serif;
+		color: #6F6F6D;
+		margin: $margin_child;
+		margin-top: $margin_child_top;
+	}
+
+	&__line {
+		display: inline;
+		border-left: 2px solid grey;
+		height: 45px;
+		width: 0px;
+		margin: 10px;
+		margin-top: $margin_child_top;
+
+	}
+}

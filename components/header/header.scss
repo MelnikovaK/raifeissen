@@ -2,11 +2,11 @@
 .header {
 
 
-	margin: 15px;
-	width: 73%;
+	// margin: 15px;
+	width: calc( 100% - #{$SIDEBAR-W} );
 	position: relative;
-	height: 20%;
-
+	height: $HEADER-H;
+	// background-color: red; // !!!
 
 
 	// 
@@ -16,28 +16,5 @@
 		height: 100px;
 		display: inline-block;
 		position: absolute;
-
-
 	}
-
-	&__tel {
-	left: 65%;
-	font: 25px Helvetica, sans-serif;
-	position: absolute;
-	color: #6F6F6D;
-}
-
-	&__line {
-		position: absolute;
-		left: 85%;
-		top: 20%;
-		border: 1px solid grey;
-		border-color: black;
-		height: 20px;
-		width: 1px;
-
-	}
-
-	// 
-
 }

@@ -1,11 +1,5 @@
 mixin header()
   .header&attributes(attributes)
-    img.header__logo(src="logo.svg")
-    p.header__tel +7 (495) 662 76 77
-    .header__line
-    .lang 
-      select
-        option RU
-        option En
+    img.header__logo(src= '../images/logo.svg')
+    +header-part()
   block
-  

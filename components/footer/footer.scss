@@ -1,16 +1,36 @@
 .footer {
-	padding-top: 20px;
+	position: absolute;
 	text-align: center;
-	height: 200px;
+	height: calc( 100% - #{$MENU-H} );
 	width: 100%;
-	margin-bottom: 20px;
 	background-color: #F6F6F3;
-	.footer__link_add-PDF::before {
+	bottom: 0;
+	padding-top: 20px;
 
+	&__link {
+		
+
+		a{
+			vertical-align: middle;
+			text-decoration: none;
+			color: black;
+			border-bottom: 1px dashed grey;
+			margin: 10px;
+
+		}
+
+		&_icon-pdf:before{
+			vertical-align: middle;
+			display: inline-block;
+			content: '';
+			background: url($IMAGES-URL + 'iconpdf.png') ;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 79px * .5;
+			height: 64px * .5;
+		}
 	}
-	a {
-		text-decoration: none;
-		color: black;
-		border-bottom: 1px dashed grey;
-	}
+
+	
 }
