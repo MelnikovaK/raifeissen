@@ -1,0 +1,43 @@
+
+.header {
+
+
+	margin: 15px;
+	width: 73%;
+	position: relative;
+	height: 20%;
+
+
+
+	// 
+	&__logo {
+		
+		width: 300px;
+		height: 100px;
+		display: inline-block;
+		position: absolute;
+
+
+	}
+
+	&__tel {
+	left: 65%;
+	font: 25px Helvetica, sans-serif;
+	position: absolute;
+	color: #6F6F6D;
+}
+
+	&__line {
+		position: absolute;
+		left: 85%;
+		top: 20%;
+		border: 1px solid grey;
+		border-color: black;
+		height: 20px;
+		width: 1px;
+
+	}
+
+	// 
+
+}

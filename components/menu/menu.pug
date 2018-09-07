@@ -1,0 +1,32 @@
+-
+    var menu_items = [
+      {url:"#", title:'Сохранить и Преумножить'},
+      {url:"#", title:'Получить финансирование'},
+      {url:"#", title:'Решение для вашего бизнеса'},
+      {url:"#", title:'Рассчетно-кассовое обслуживание'},
+      {url:"#", title:'Решение для вашей семьи/Консалтинг'},
+      {url:"#", title:'Сохранить и Преумножить'},
+      {title: undefined},
+      {url:"#", title:'О нас'},
+      {url:"#", title:'Контактная информация'}
+      ];
+
+mixin menu( menu_active_item )
+  .menu( data-item=menu_active_item )&attributes(attributes)
+    for item in menu_items
+      - var classes = ['menu__item'];
+      - if(item.title) {
+      - if (menu_items[menu_active_item-1] == item) {
+      -    classes.push('menu__item_active');
+      - }
+          p(class = classes)
+            a(href=item.url) #{item.title} 
+      - } else {
+          .menu__line
+      -    menu_active_item++
+      -  }
+
+
+
+  block
+

@@ -1,0 +1,48 @@
+%menu_items {
+	margin: 30px;
+	margin-bottom: 20px;
+}
+
+
+
+
+.menu {
+	
+	margin: $MARGIN-SIDEBAR;
+	float: right;
+	display: block;
+	height: 400px;
+
+	&__item {
+	@extend %menu_items;
+
+
+
+
+}
+	&__item_active {
+	@extend %menu_items;
+
+	text-shadow: 1px 1px 2px black; 
+
+
+
+	
+}
+a {
+		text-decoration: none;
+		font: $FONT-CONTENT;
+		color: #575757;
+	}
+	.menu__line {
+		 margin-top:20px;
+  		border-top:2px solid grey;
+  		width: 40px;
+  		
+
+	}
+	a:hover {
+		border-bottom: 1px dashed grey;
+	}
+
+}

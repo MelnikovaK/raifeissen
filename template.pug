@@ -1,0 +1,33 @@
+include components/header/header
+include components/content/content
+include components/sidebar/sidebar
+include components/menu/menu
+include components/btns/btns
+include components/footer/footer
+
+
+block setup
+
+html
+  head
+    link(rel="stylesheet", href="styles/styles.css")
+    meta(charset="utf-8")
+    meta(name="autor", content="Melnikova")
+    
+    block title
+      title=title
+
+  body
+    block page
+    .page
+
+      +header()
+
+      block content
+            
+      +sidebar( menu_active_items )
+
+
+
+
+

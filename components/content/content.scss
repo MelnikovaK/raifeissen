@@ -1,0 +1,26 @@
+.info {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction:column;
+	margin: 20px;
+	position: relative;
+	&__text {
+		font: $FONT-CONTENT;
+		color: #333;
+
+	}
+	&__title {
+		font: $FONT-TITLE;
+		font-weight: bold;
+		color: #6F6F6D;
+		text-align: center;
+	}
+}
+
+.img-holder__pic {
+	float: left;
+}
+
+.content {
+
+}

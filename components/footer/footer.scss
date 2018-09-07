@@ -1,0 +1,16 @@
+.footer {
+	padding-top: 20px;
+	text-align: center;
+	height: 200px;
+	width: 100%;
+	margin-bottom: 20px;
+	background-color: #F6F6F3;
+	.footer__link_add-PDF::before {
+
+	}
+	a {
+		text-decoration: none;
+		color: black;
+		border-bottom: 1px dashed grey;
+	}
+}

@@ -1,0 +1,8 @@
+.page {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction:column;
+	background-color: $COLOR-BODY;
+	height: 100%;
+	border: 3px solid white;
+}
