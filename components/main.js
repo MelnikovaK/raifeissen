@@ -2,6 +2,15 @@ $(function() {
 	
 	var data;
 
+
+	//NAVIGO
+	var root = null;
+	var useHash = true; // Defaults to: false
+	var hash = '#'; // Defaults to: '#'
+	var router = window.router = new Navigo(root, useHash, hash);
+
+	
+
 	$.get("assets/data.json", function(_data) {
 
 		data = _data;
@@ -15,6 +24,12 @@ $(function() {
 		}
 
 		$(window).trigger('main:ready', data );
+
+		router.on( '/:content', function (params) {
+			console.log( 'Navigo: ', params  );
+			$(window).trigger("content:changed", params.content );
+		}).resolve();
+		
 
 	});
 
@@ -58,6 +73,11 @@ $(function() {
 		
 		$(window).trigger("window-size:changed");
 	});
+
+
+	
+	
+	
 
 
 });

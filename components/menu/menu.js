@@ -6,7 +6,7 @@ $(function(){
 	var $item;
 	var lan;
 	var current_item;
-
+	var content_id;
 
 
 	if( $element.length<1 ) {
@@ -27,7 +27,7 @@ $(function(){
 		var source = document.getElementById( "tmpl-sidebar-menu" ).innerHTML;
 		template = Handlebars.compile(source);
 
-		$menu_items.empty();
+		
 		$btn.empty();
 
 
@@ -45,9 +45,7 @@ $(function(){
 		});
 
 
-
-
-		init_menu(data.start_content);
+		init_menu( content_id);
 
 
 	});
@@ -63,37 +61,50 @@ $(function(){
 		// 	// console.log(i,e,$(e).parent().data('menu-index'));
 		// 	$(e).text( data.menu[ $(e).parent().data('menu-index') ].title[ language_name ] );
 		// });
-		lan = language_name;
+		lan = language_name || data.start_language;
 		$menu_items.empty();
-		init_menu(current_item || data.start_content);
+		init_menu(content_id);
 		
 	});
 
+
+	$(window).on("content:changed", function(evt, _content_id) {
+		content_id = _content_id;
+		console.log(data.content[content_id].title[lan]);
+		$('.menu__item').each(function(i, e) {
+			$(e).removeClass('menu__item_active');
+			if( data.content[content_id].title[lan] == $(e).text()) {
+				$(e).addClass('menu__item_active');
+			}
+
+		});
+	});
 
 	$menu_items.on("click", function(event) {
 
 		// console.log("CLICK: ", event.target );
 		var $item = $(event.target);
 		if( $item.hasClass('menu__item') ){
-			$('.menu__item').removeClass('menu__item_active');
-			$item.addClass('menu__item_active');
+			// $('.menu__item').removeClass('menu__item_active');
+			// $item.addClass('menu__item_active');
 
-			TweenMax.fromTo($item, .6, {
-				scale: 1.1
-			}, {
-				scale: 1,
-				ease: Sine.easeInOut
-			});
+			// TweenMax.fromTo($item, .6, {
+			// 	scale: 1.1
+			// }, {
+			// 	scale: 1,
+			// 	ease: Sine.easeInOut
+			// });
 
 			current_item = $item.data('content-id');
-
+			console.log('MENU :> ', current_item );
+			router.navigate('/'+current_item );
 			
-			$(window).trigger("content:changed", $item.data('content-id') );
+			// $(window).trigger("content:changed", $item.data('content-id') );
 		}
 	});
 
+
 	function init_menu(page) {
-		
 		$menu_items.empty();
 		var _menu = data.menu;
 		var menu = {};
@@ -106,24 +117,13 @@ $(function(){
 
 			html += template(menu);
 		});
-
 		$( html ).appendTo( $( '.menu__items' ) );
-	
+		//console.log(html);
 		_content = data.content[page];
 		
-		$('.menu__item:contains('+_content.title[lan]+')').addClass('menu__item_active');
+		//$('.menu__item:contains('+_content.title[lan]+')').addClass('menu__item_active');
 
-		$('.menu__item').each(function(i,e){
-
-			TweenMax.fromTo( e, .4, {
-				opacity: 0,
-			}, {
-				delay: .1 * i,
-				opacity: 1,
-				ease: Power1.easeInOut
-			});
-
-		});
+	
 	}
 
 });

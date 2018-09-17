@@ -22,13 +22,14 @@ $(function(){
 	$(window).on('language:changed', function(evt, language_name ){
 		$content.empty();
 		lan = language_name;
-		init_content();
+		//init_content();
 	});
 
 
 
 	$(window).on("content:changed", function(evt, _content_id) {
 		content_id = _content_id;
+		console.log('CONTENT-ID', content_id);
 		init_content();
 	});
 

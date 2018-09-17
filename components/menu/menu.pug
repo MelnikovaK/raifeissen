@@ -17,13 +17,8 @@ mixin menu__template()
   .menu&attributes(attributes)
     .menu__items
     script(id="tmpl-sidebar-menu" type="text/x-handlebars-template")
-        p.menu__item( data-content-id="{{content_id}}" )
+        p.menu__item( data-content-id="{{content_id}}")
           a(href='{{href}}') {{title}}
-        
-        //- 
-          |{{#each menu}}
-          a(href="{{this.href}}") {{this.title}}
-          |{{/each}}  
         
   block
 
