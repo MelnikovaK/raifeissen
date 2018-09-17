@@ -30,20 +30,6 @@ $(function(){
 		$menu_items.empty();
 		$btn.empty();
 
-		// Generate menu items
-		// data.menu.forEach(function( e, i ) {
-			
-		// 	//console.log('item',i,e);
-		// if( e.title ) {
-				
-		// 	var $adding_el = 
-		// 		$('<p class="menu__item"><a href="'+e.href+'">'+e.title.ru+'</a></p>')
-		// 			.appendTo($menu_items)
-		// 			.data('menu-index', i )
-		// } else {
-		// 	$('<div class="menu__line"></div>').appendTo($menu_items);
-		// }
-		// });
 
 		var $adding_btn;
 
@@ -59,7 +45,8 @@ $(function(){
 		});
 
 
-		
+
+
 		init_menu(data.start_content);
 
 
@@ -90,14 +77,23 @@ $(function(){
 		if( $item.hasClass('menu__item') ){
 			$('.menu__item').removeClass('menu__item_active');
 			$item.addClass('menu__item_active');
-			//console.log('click on a item!', $item.data('content-id') );
+
+			TweenMax.fromTo($item, .6, {
+				scale: 1.1
+			}, {
+				scale: 1,
+				ease: Sine.easeInOut
+			});
+
 			current_item = $item.data('content-id');
+
+			
 			$(window).trigger("content:changed", $item.data('content-id') );
 		}
-
 	});
 
 	function init_menu(page) {
+		
 		$menu_items.empty();
 		var _menu = data.menu;
 		var menu = {};
@@ -115,8 +111,19 @@ $(function(){
 	
 		_content = data.content[page];
 		
-
 		$('.menu__item:contains('+_content.title[lan]+')').addClass('menu__item_active');
+
+		$('.menu__item').each(function(i,e){
+
+			TweenMax.fromTo( e, .4, {
+				opacity: 0,
+			}, {
+				delay: .1 * i,
+				opacity: 1,
+				ease: Power1.easeInOut
+			});
+
+		});
 	}
 
 });

@@ -10,7 +10,7 @@ $(function() {
 		data.start_language = data.lang[0];
 		
 		for ( var i in data.content) {
-			data.start_content = data.content[i].title.en;
+			data.start_content = i;
 			break;
 		}
 

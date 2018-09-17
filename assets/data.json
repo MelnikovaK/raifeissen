@@ -1,7 +1,7 @@
 {
 	"content": {
 
-		"Safe and multiply": {
+		"safe-and-multiply": {
 			"title": {
 				"ru": "Сохранить и преумножить",
 				"en": "Safe and multiply"
@@ -25,7 +25,7 @@
 		
 		},
 
-		"Solves for your business": {
+		"solves-for-business": {
 			"title": {
 				"ru": "Решение для вашего бизнеса",
 				"en": "Solves for your business"
@@ -48,7 +48,7 @@
 			}
 		
 		},
-		"Settlement and cash services": {
+		"settlement": {
 			"title": {
 				"ru": "Рассчетно-кассовое обслуживание",
 				"en": "Settlement and cash services"
@@ -71,7 +71,7 @@
 			}
 		
 		},
-		"Solution for your family / Consulting": {
+		"consulting": {
 			"title": {
 				"ru": "Решение для вашей семьи/Консалтинг",
 				"en": "Solution for your family / Consulting"
@@ -94,7 +94,7 @@
 			}
 		
 		},
-		"Get financing": {
+		"get-financing": {
 			"title": {
 				"ru": "Получить финансирование",
 				"en": "Get financing"
@@ -117,7 +117,7 @@
 			}
 		
 		},
-		"About us": {
+		"about": {
 			"title": {
 				"ru": "О нас",
 				"en": "About us"
@@ -140,7 +140,7 @@
 			}
 		
 		},
-		"Contacts": {
+		"contacts": {
 			"title": {
 				"ru": "Контактная информация",
 				"en": "Contacts"
@@ -171,7 +171,7 @@
 				"en": "Safe and multiply"
 			} ,
 			"href": "#",
-			"content_id": "Safe and multiply"
+			"content_id": "safe-and-multiply"
 		},
 		{
 			"title": {
@@ -179,7 +179,7 @@
 				"en": "Solves for your business"
 			},
 			"href": "Solves for your business",
-			"content_id": "Solves for your business"
+			"content_id": "solves-for-business"
 		},
 		{
 			"title": {
@@ -187,7 +187,7 @@
 				"en": "Settlement and cash services"
 			},
 			"href": "Settlement and cash services",
-			"content_id": "Settlement and cash services"
+			"content_id": "settlement"
 		},
 		{
 			"title": { 
@@ -195,7 +195,7 @@
 				"en": "Solution for your family / Consulting"
 			},
 			"href": "Solution for your family / Consulting",
-			"content_id": "Solution for your family / Consulting"
+			"content_id": "consulting"
 		},
 		{
 			"title": {
@@ -203,7 +203,7 @@
 				"en": "Get financing"
 			} ,
 			"href": "Get financing"	,
-			"content_id": "Get financing"
+			"content_id": "get-financing"
 		},
 		{
 			"title":"",
@@ -215,7 +215,7 @@
 				"en": "About us"
 			},
 			"href": "#",
-			"content_id": "About us"
+			"content_id": "about"
 		},
 		{
 			"title": { 
@@ -223,7 +223,7 @@
 				"en": "Contacts"
 			},
 			"href": "#",
-			"content_id": "Contacts"
+			"content_id": "contacts"
 		}
 	],
 
