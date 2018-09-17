@@ -1,45 +1,64 @@
-%menu_items {
-	margin: 30px;
-	margin-bottom: 20px;
-}
-
-
 
 
 .menu {
 	
-	margin: $MARGIN-SIDEBAR;
+	width: 100%;
 	float: right;
 	display: block;
 	height: $MENU-H;
 
 	&__item {
-	@extend %menu_items;
-
-
-
-
-}
-	&__item_active {
-	@extend %menu_items;
-
-	text-shadow: 1px 1px 2px black; 
-}
-	
-a {
-		text-decoration: none;
-		font: $FONT-CONTENT;
-		color: #575757;
+		margin: 30px;
+		margin-bottom: 20px;
+		cursor: pointer;
+		
+		a {	
+			text-decoration: none;
+			font: $FONT-CONTENT;
+			color: #575757;
+			pointer-events: none;
+		}
 	}
-	.menu__line {
+
+	&__item_active {
+		margin: 30px;
+		margin-bottom: 20px;
+
+		text-shadow: 1px 1px 2px black; 
+	}
+	
+	
+
+	&__line {
 		 margin-top:20px;
   		border-top:2px solid grey;
   		width: 40px;
+  		text-align: center;
   		
 
+
 	}
+
 	a:hover {
 		border-bottom: 1px dashed grey;
 	}
 
+	@include MOBILE() {
+		background-color: red;
+		font-size: 11px;
+
+	}
+
+	@include TABLET() {
+		background-color: yellow;
+	}
+
+
+	@include NOT-DESKTOP() {
+		// font-weight: bold;
+		// color: blue;
+		// background-color: green;
+	}
+
 }
+

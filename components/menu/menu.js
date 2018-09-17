@@ -1,7 +1,12 @@
 $(function(){
 
 	var $element = $('.menu');
+	var $menu_items = $('.menu__items');
 	var $btn = $('.btns');
+	var $item;
+	var lan;
+	var current_item;
+
 
 
 	if( $element.length<1 ) {
@@ -18,29 +23,27 @@ $(function(){
 
 		data = _data;
 
-		//console.log('#Menu: ', event, data );
-		$element.empty();
+		//HANDLEBARS
+		var source = document.getElementById( "tmpl-sidebar-menu" ).innerHTML;
+		template = Handlebars.compile(source);
+
+		$menu_items.empty();
 		$btn.empty();
 
 		// Generate menu items
-		data.menu.forEach(function( e, i ) {
+		// data.menu.forEach(function( e, i ) {
 			
-			//console.log('item',i,e);
-			if( e.title ) {
+		// 	//console.log('item',i,e);
+		// if( e.title ) {
 				
-				var $adding_el = 
-					$('<p class="menu__item"><a href="'+e.href+'">'+e.title.ru+'</a></p>')
-						.appendTo($element)
-						.data('menu-index', i );
-					;
-
-				// if( data.content.title.ru == e.title.ru ) {
-				// 	$adding_el.addClass('menu__item_active');
-				// }
-			} else {
-				$('<div class="menu__line"></div>').appendTo($element);
-			}
-		});
+		// 	var $adding_el = 
+		// 		$('<p class="menu__item"><a href="'+e.href+'">'+e.title.ru+'</a></p>')
+		// 			.appendTo($menu_items)
+		// 			.data('menu-index', i )
+		// } else {
+		// 	$('<div class="menu__line"></div>').appendTo($menu_items);
+		// }
+		// });
 
 		var $adding_btn;
 
@@ -53,28 +56,67 @@ $(function(){
 			if( e.theme == "dark" ) {
 				$adding_btn.addClass('btns__btn_dark');
 			}	
-		})
+		});
+
+
+		
+		init_menu(data.start_content);
+
 
 	});
 
 	// LANG
 	$(window).on("language:changed", function(evt, language_name) {
-		console.log("#Main: language:changed: ["+language_name+"]", evt);
-		var $menu_item = $( '.menu__item>a', $element ); 
+		//console.log("#Main: language:changed: ["+language_name+"]", evt);
+		// var $menu_items_item = $( '.menu__item>a', $element ); 
 
-		console.log('$menu_item: ', $menu_item );
-		// return;
+		// //console.log('$menu_items_item: ', $menu_items_item );
 
-		// var $add;
-		// $menu_item.empty();
-
-		$menu_item.each(function(i,e) {
-			console.log(i,e,$(e).parent().data('menu-index'));
-			$(e).text( data.menu[ $(e).parent().data('menu-index') ].title[ language_name ] );
-			// $add = $('<a href="'+e.href+'">'+e.title.data+'</a>');
-			// $add.appendTo($menu_item);
-		});
+		// $menu_items_item.each(function(i, e ) {
+		// 	// console.log(i,e,$(e).parent().data('menu-index'));
+		// 	$(e).text( data.menu[ $(e).parent().data('menu-index') ].title[ language_name ] );
+		// });
+		lan = language_name;
+		$menu_items.empty();
+		init_menu(current_item || data.start_content);
 		
 	});
+
+
+	$menu_items.on("click", function(event) {
+
+		// console.log("CLICK: ", event.target );
+		var $item = $(event.target);
+		if( $item.hasClass('menu__item') ){
+			$('.menu__item').removeClass('menu__item_active');
+			$item.addClass('menu__item_active');
+			//console.log('click on a item!', $item.data('content-id') );
+			current_item = $item.data('content-id');
+			$(window).trigger("content:changed", $item.data('content-id') );
+		}
+
+	});
+
+	function init_menu(page) {
+		$menu_items.empty();
+		var _menu = data.menu;
+		var menu = {};
+		var html = '';
+		_menu.forEach( function(e,i) {
+			menu.title = e.title[lan];
+			menu.href = e.href;
+			menu.content_id = e.content_id;
+			menu.language = lan;
+
+			html += template(menu);
+		});
+
+		$( html ).appendTo( $( '.menu__items' ) );
+	
+		_content = data.content[page];
 		
+
+		$('.menu__item:contains('+_content.title[lan]+')').addClass('menu__item_active');
+	}
+
 });

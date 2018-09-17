@@ -1,3 +1,4 @@
+
 -
     var menu_items = [
       {url:"#", title:'Сохранить и Преумножить'},
@@ -10,6 +11,23 @@
       {url:"#", title:'О нас'},
       {url:"#", title:'Контактная информация'}
       ];
+
+
+mixin menu__template()
+  .menu&attributes(attributes)
+    .menu__items
+    script(id="tmpl-sidebar-menu" type="text/x-handlebars-template")
+        p.menu__item( data-content-id="{{content_id}}" )
+          a(href='{{href}}') {{title}}
+        
+        //- 
+          |{{#each menu}}
+          a(href="{{this.href}}") {{this.title}}
+          |{{/each}}  
+        
+  block
+
+
 
 mixin menu( menu_active_item )
   .menu( data-item=menu_active_item )&attributes(attributes)
@@ -26,7 +44,6 @@ mixin menu( menu_active_item )
       -    menu_active_item++
       -  }
     +btns()
-
 
 
   block

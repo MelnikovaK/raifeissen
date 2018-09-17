@@ -9,6 +9,7 @@ include components/header-part/header-part
 include components/info/info
 include components/link/link
 include components/btns/btns
+include components/info/info
 
 block setup
 
@@ -30,10 +31,13 @@ html
 
       block content
             
-      +sidebar( menu_active_items )
+      +sidebar()
+
+      //-+info__template()
 
       script(src="scripts/libs/jquery-3.3.1.js" type="text/javascript")
       script(src="scripts/app.min.js" type="text/javascript")
+      script(src="scripts/libs/handlebars-v4.0.12.js" type="text/javascript")
 
 
 

@@ -1,6 +1,8 @@
 mixin sidebar( menu_active_items )
   .sidebar&attributes(attributes)
-    +menu(menu_active_items)
+    +menu__template()
+
+    +btns()
     
     +footer()
   block

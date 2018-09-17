@@ -1,4 +1,10 @@
 mixin img-holder()
-  .img-holder&attributes(attributes)
-    img.img-holder__pic(src='../images/img.jpg')
-  block
+	.img-holder&attributes(attributes)
+		img.img-holder__pic(src='../images/img.jpg')
+	block
+
+mixin img-holder__template()
+	script(id="tmpl-content-img" type="text/x-handlebars-template")
+		.img-holder&attributes(attributes)
+			img.img-holder__pic(src='{{img.url}}')
+	block

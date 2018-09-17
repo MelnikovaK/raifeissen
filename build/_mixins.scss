@@ -1,0 +1,27 @@
+
+
+
+@mixin MOBILE(){
+	@at-root .is_mobile &{
+		@content;
+	}
+}
+
+@mixin TABLET(){
+	@at-root .is_tablet &{
+		@content;
+	}
+}
+
+
+@mixin DESKTOP(){
+	@at-root .is_desktop &{
+		@content;
+	}
+}
+
+@mixin NOT-DESKTOP(){
+	@at-root body:not(.is_desktop) &{
+		@content;
+	}
+}
